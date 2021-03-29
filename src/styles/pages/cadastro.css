@@ -1,0 +1,127 @@
+
+*{
+    margin-right: 10%;
+    margin-left: 10%;
+    justify-content: center;
+    color:#4489F2 ;
+}
+
+
+
+/* -------------MENU ----------*/
+.menu1{
+    z-index: 1;
+    position: fixed; right: 0;top:0;
+    background-color: #f5f5f5!important;
+    padding-bottom: 5px!important;
+    width: 100vw!important;
+    margin-right: 0!important;
+    margin-left: 0!important;
+    padding-left: 0;
+    margin-bottom:5% !important;
+}
+
+.menu1 h2{
+    text-decoration: none;
+    font-size: 42px;
+    text-align: center;
+    padding-top: 10px;
+    font-family: poppins!;
+}
+
+
+
+
+/* -------------Form ----------*/
+.cadastro1{
+   box-shadow: -3px -4px 5px rgb(182, 180, 180);
+   font-family: poppins!;
+   border:solid 2px;
+   border-color: #4489F2;
+   border-radius: 15px;
+   margin-top: 15%;
+   margin-bottom: 10%;
+   padding-right: 14%;
+   padding-bottom: 8%;
+}
+
+form h3{
+    z-index: 0;
+    padding-top: 5%;
+    text-align: center;
+
+}
+
+form input{
+    border:solid 1px;
+    border-radius: 8px;
+    border-color: #4489F2!important;
+}
+
+form label{
+    margin-left: 0;
+    float: left;
+}
+
+form .col-md-12{
+    display: flex !important;
+    flex-direction: column!important;
+
+}
+
+form button{
+    padding: 10px 22px 10px 22px;
+    border: none;
+    border-color: #4489F2;
+    color: white;
+    background-color: #4489F2;
+    border-radius: 5px;
+    margin-left: 45%;
+    margin-top: 4%;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center!important;  
+  }
+
+form p{
+  
+    padding-top: 5%;
+    font-size: 12px;
+    margin-left: 28%;
+    align-items: center;
+    flex-direction: column;
+    float: center!important; 
+    text-align: center;
+}
+form a{
+    font-weight: bold;
+
+}
+
+
+.radio{
+    margin-left: 5%;
+    padding-left: 0;  
+    align-items:left!important;
+    display:flex;
+    flex-direction: column;
+  
+}
+
+#empregador{
+    padding-right: 0;
+    margin-left: 0;
+    padding-left: 0;
+  
+}
+
+.selectName{
+    border-color: #4489F2;
+    color: #000;
+    border-radius: 5px;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center!important;  
+}
