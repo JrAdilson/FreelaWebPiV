@@ -59,7 +59,7 @@ function Cadastro() {
                             </div>
                         )}
                     </div>
-                    <p>Ao clicar em "Cadastrar" você concorda com os <a href=''>Termos e Condições de uso.</a></p>
+                    <p>Ao clicar em "Cadastrar" você concorda com os  <a href=''>  Termos e Condições de uso.</a></p>
                     <button type='submit' name='cadastrar'>Cadastrar</button>
                 </form>
 
