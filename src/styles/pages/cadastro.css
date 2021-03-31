@@ -11,6 +11,7 @@
 
 /* -------------Form ----------*/
 .conteudoCadastro{
+   font-family: poppins!important;
    margin:0 30% 0 30%;
    box-shadow: -3px -4px 5px rgb(182, 180, 180);
    font-family: poppins!;
@@ -27,13 +28,13 @@
 
 form h3{
     font-size: 30px;
-    padding: 1% 0 3% 0;
+    padding: 1% 0 5% 0;
     text-align: center;
 
 }
 
 form input{
-    padding:3px 0 3px 0;
+    padding:4px 0 4px 0;
     font-size: 14px;
     margin-top: 5px;
     border:solid 1px;
@@ -42,6 +43,7 @@ form input{
 }
 
 form label{
+    padding-top: 2%;
     font-size: 16px;
     margin-left: 0;
     float: left;
