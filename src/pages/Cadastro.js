@@ -12,7 +12,9 @@ function Cadastro() {
 
                     <div className="col-md-12">
                         <h3>Cadastre - se</h3>
+
                         <hr />
+                        
                         <label>Nome</label>
                         <input type='text' name='nome' placeholder=' Junin' />
 

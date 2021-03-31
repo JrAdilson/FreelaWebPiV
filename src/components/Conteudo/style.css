@@ -1,0 +1,46 @@
+.conteudoPage{
+    margin-top: 9% !important;
+}
+.conteudoPage h2{
+    text-align: center;
+}
+.q1-freela{
+    margin:0 15% 0 15%;
+    padding-top: 2%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.q1-freela p{
+    color: #000;
+    padding-left: 6%;
+}
+
+.q2-freela p{
+    margin-top: 4%;
+    text-align: center;
+}
+
+.q3-freela{
+    padding-top: 2%;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.q3-freela2{
+    padding:0 1% 0 1% ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.q4-freela{
+    margin:5% 15% 0 15%;
+}
+.q4-freela p{
+    text-align: center;
+    color: #000;
+}

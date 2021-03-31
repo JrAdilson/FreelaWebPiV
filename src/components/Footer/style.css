@@ -1,0 +1,45 @@
+.q1-footer{
+
+    margin-top: 7%;
+    
+    background-color: #f1f1f1!important;
+}
+.location img{
+ margin-top: 1%;
+ margin-left: 2%;
+ padding-right: 1%;
+ width: 30;
+ height: 20px;
+}
+
+.phone img{
+    margin-top: 1%;
+    margin-left: 2%;
+    padding-right: 1%;
+    width: 30;
+    height: 20px;
+   }
+
+   .mail img{
+    margin-top: 1%;
+    margin-left: 2%;
+    padding-right: 1%;
+    width: 30;
+    height: 20px;
+   }
+
+.hr{
+    margin: 3% 10% 2% 10%;
+}
+
+.privacity{
+    margin-top: 2%;
+    text-align: center;
+}
+
+.copyright{
+    margin-top: 2%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
