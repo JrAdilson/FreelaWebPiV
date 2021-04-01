@@ -9,8 +9,8 @@ function Header({ home }) {
             {
                 home && (
                     <nav>
-                        <button color="primary">Entrar</button>
-                        <Link to="/cadastro">Cadastrar</Link>
+                       <button><Link to ="/login"><p>Entrar</p></Link></button>
+                       <button><Link to="/cadastro"><p>Cadastrar</p></Link></button>
                         
                     </nav>
                 )
