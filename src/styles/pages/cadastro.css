@@ -11,6 +11,7 @@
 
 /* -------------Form ----------*/
 .conteudoCadastro{
+  background-color: #FAFAFA;
    font-family: poppins!important;
    margin:0 30% 0 30%;
    box-shadow: -3px -4px 5px rgb(182, 180, 180);
@@ -56,13 +57,13 @@ form .col-md-12{
 }
 
 form button{
-    padding: 10px 22px 10px 22px;
+    padding: 10px 50px 10px 50px;
     border: none;
     border-color: #4489F2;
     color: white;
     background-color: #4489F2;
     border-radius: 5px;
-    margin: 0 0 0 40%;
+    margin: 0 0 0 35%;
     margin-top: 4%;
     display: flex;
     align-items: center;  
@@ -84,7 +85,7 @@ form a{
 
 
 .radio{
-    margin-left: 1%;
+    margin-left: 0.5%;
     padding-left: 0;
     padding-bottom:2% ;  
     align-items:left!important;
@@ -92,7 +93,6 @@ form a{
     flex-direction: column;
   
 }
-
 
 .selectName{
     border-color: #4489F2;

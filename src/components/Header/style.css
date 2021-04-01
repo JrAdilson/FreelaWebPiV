@@ -12,6 +12,21 @@
     padding: 0 25px; 
   }
 .logo{
-    width: 230px;
-    height: 45px;
+    width: 210px;
+    height: 42px;
+}
+nav{
+  display: flex;
+  flex-direction: row;
+  padding-right: 2%;
+}
+nav button{
+background-color:#4489F2;
+ border:none;
+ border-radius: 5px;
+ padding:9px 7px 9px 7px;
+ margin-left: 10%;
+}
+nav p{
+  color: #fff;
 }

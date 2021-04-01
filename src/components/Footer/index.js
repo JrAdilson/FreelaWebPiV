@@ -7,7 +7,7 @@ import mail from '../../assets/img/mail.png'
 function Footer() {
     return (
         <div className="q1-footer">
-            <div className="location">
+            {/*<div className="location">
                 <img src={location}></img>
                 Rua Felipe Lima, nº 24, Zona da Mata - Ponte Firme/MG
             </div>
@@ -24,7 +24,7 @@ function Footer() {
 
             <div className="hr">
                 <hr/>
-            </div>
+     </div>*/}
             <div className="privacity">
                 <a href=''>Politica de Privacidade</a> 
             </div>
