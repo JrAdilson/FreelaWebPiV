@@ -11,7 +11,6 @@
 
 /* -------------Form ----------*/
 .conteudoCadastro{
-  background-color: #FAFAFA;
    font-family: poppins!important;
    margin:0 30% 0 30%;
    box-shadow: -3px -4px 5px rgb(182, 180, 180);
@@ -57,7 +56,7 @@ form .col-md-12{
 }
 
 form button{
-    padding: 10px 50px 10px 50px;
+    padding: 10px 55px 10px 55px;
     border: none;
     border-color: #4489F2;
     color: white;

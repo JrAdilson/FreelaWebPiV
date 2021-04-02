@@ -1,16 +1,22 @@
+.container{
+  width: 100%;
+  height: calc(100vh - 105px);
+  padding-top: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .login1{
-  background-color: #FAFAFA;
   display: flex !important;
   flex-direction: column!important;
-  font-family: poppins!important;
-   margin:0 30% 0 30%;
+  width: 480px;
+  font-family: poppins;
    box-shadow: -3px -4px 5px rgb(182, 180, 180);
    font-family: poppins!;
    border:solid 2px;
    border-color: #4489F2;
    border-radius: 15px;
-   margin-top: 10%;
-   margin-bottom: 4%;
    padding-left: 1.5%;
    padding-right: 2%;
    padding-bottom: 4%;
