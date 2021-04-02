@@ -30,7 +30,7 @@ function Footer() {
             </div>
 
             <div className="copyright">
-                © FREELA. Todos os diretos reservados
+                © FREELA. Todos os diretos reservados.
             </div>
 
         </div>

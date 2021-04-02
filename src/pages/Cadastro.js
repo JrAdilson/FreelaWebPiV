@@ -14,7 +14,7 @@ function Cadastro() {
                         <h3>Cadastre - se</h3>
 
                         <hr />
-                        
+
                         <label>Nome</label>
                         <input type='text' name='nome' placeholder=' Junin' />
 
@@ -44,14 +44,6 @@ function Cadastro() {
                                 <label>Empresa</label>
                                 <input type='text' name='empresa' />
 
-                                <label>Área de Interesse</label>
-                                <select className="selectName">
-                                    <option value="front">--------</option>
-                                    <option value="front">Front End</option>
-                                    <option value="back">Back End</option>
-                                    <option value="full">FullStack</option>
-                                    <option value="arq">Arquiteto de Software</option>
-                                </select>
                             </div>
                         )}
                         {!isContratante && (
@@ -61,8 +53,8 @@ function Cadastro() {
                             </div>
                         )}
                     </div>
-                    <p>Ao clicar em "Cadastrar" você concorda com os  <a href=''>  Termos e Condições de uso.</a></p>
-                    <button type='submit' name='cadastrar'>Cadastrar</button>
+                    <p>Ao clicar em "Cadastrar" você concorda com os  <a href=''>Termos e Condições de uso.</a></p>
+                    <Link to="/login"><button type='submit' name='cadastrar'>Cadastrar</button></Link>
                 </form>
 
             </div>
