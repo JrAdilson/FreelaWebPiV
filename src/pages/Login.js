@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Header from '../components/Header/index'
+import Header from '../components/Header/index';
 import '../styles/pages/login.css';
 
-
-function Login() {
+const Login = () => {
+    const [ email, setEmail ] = useState('');
+    const [ password, setPassword ] = useState('');
 
     return (
         <>
@@ -16,10 +17,22 @@ function Login() {
                     <hr />
 
                     <label>Email</label>
-                    <input type='email' name='email' placeholder=' adriano@gmail.com' />
+                    <input
+                        type='email'
+                        name='email'
+                        placeholder=' adriano@gmail.com'
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
 
                     <label>Senha</label>
-                    <input type='password' name='senha' placeholder=' **********' />
+                    <input
+                        type='password'
+                        name='senha'
+                        placeholder=' **********'
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
                     <div className="esqSenha">
                         <Link to="/login">Esqueceu a senha?</Link>
                     </div>
@@ -29,4 +42,5 @@ function Login() {
         </>
     )
 }
+
 export default Login;

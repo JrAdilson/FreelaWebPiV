@@ -1,0 +1,25 @@
+.principal{
+    height: 300px;
+    background-color: #C4C4C4!important;
+   
+}
+
+
+.conteudo img{
+    margin-top: -90px;
+    border-radius: 65px;
+    width: 130px;
+    height: 130px;
+    bottom: 0;
+}
+
+.conteudo{
+    display: flex;
+    justify-content: center;
+    margin-top: -20px;
+    z-index: 10;
+    background-color:#fff ;
+    height: calc(100vh - 280px);
+    border-top-right-radius: 20px;
+    border-top-left-radius:20px;
+}

@@ -4,25 +4,26 @@
 }
 
 
-
-/* -------------MENU ----------*/
-
-
-
-/* -------------Form ----------*/
 .conteudoCadastro{
+    width: 100%;
+    height: calc(100vh-);
+    padding-top: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+.cadastro1{
    font-family: poppins!important;
-   margin:0 30% 0 30%;
    box-shadow: -3px -4px 5px rgb(182, 180, 180);
    font-family: poppins!;
    border:solid 2px;
    border-color: #4489F2;
    border-radius: 15px;
-   margin-top: 10%;
    margin-bottom: 5%;
    padding-left: 1.5%;
    padding-right: 2%;
-   padding-bottom: 5%;
+   padding-bottom: 4%;
    padding-top: 2%;
 }
 
