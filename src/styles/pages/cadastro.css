@@ -1,109 +1,109 @@
-
-*{
-    color:#4489F2 ;
+* {
+  color: #4489f2;
 }
 
-
-.conteudoCadastro{
-    width: 100%;
-    height: calc(100vh-);
-    padding-top: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-.cadastro1{
-   font-family: poppins!important;
-   box-shadow: -3px -4px 5px rgb(182, 180, 180);
-   font-family: poppins!;
-   border:solid 2px;
-   border-color: #4489F2;
-   border-radius: 15px;
-   margin-bottom: 5%;
-   padding-left: 1.5%;
-   padding-right: 2%;
-   padding-bottom: 4%;
-   padding-top: 2%;
+.conteudoCadastro {
+  width: 100%;
+  height: calc(100vh-);
+  padding-top: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-form h3{
-    font-size: 30px;
-    padding: 1% 0 5% 0;
-    text-align: center;
-
+.cadastro1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: -3px -4px 5px rgb(182, 180, 180);
+  font-family: poppins!;
+  border: solid 1px;
+  border-color: #4489f2;
+  border-radius: 15px;
+  padding: 2rem;
 }
 
-form input{
-    padding:4px 0 4px 0;
-    font-size: 14px;
-    margin-top: 5px;
-    border:solid 1px;
-    border-radius: 8px;
-    border-color: #4489F2!important;
+form h3 {
+  font-size: 30px;
+  padding: 1% 0 5% 0;
+  text-align: center;
 }
 
-form label{
-    padding-top: 2%;
-    font-size: 16px;
-    margin-left: 0;
-    float: left;
+form input {
+  padding: 8px;
+  font-size: 14px;
+  margin-top: 8px;
+  border: solid 1px;
+  border-radius: 8px;
+  border-color: #4489f2;
 }
 
-form .col-md-12{
-    display: flex !important;
-    flex-direction: column!important;
-
+input:focus {
+  outline: none;
 }
 
-form button{
-    padding: 10px 55px 10px 55px;
-    border: none;
-    border-color: #4489F2;
-    color: white;
-    background-color: #4489F2;
-    border-radius: 5px;
-    margin: 0 0 0 35%;
-    margin-top: 4%;
-    display: flex;
-    align-items: center;  
-  }
-
-form p{
-    padding-top: 5%;
-    font-size: 12px;
-    margin-left: 13%;
-    align-items: center;
-    display: flex;
-    float: center!important; 
-    text-align: center;
-}
-form a{
-    font-weight: bold;
-
+form label {
+  padding-top: 2%;
+  font-size: 16px;
+  margin-left: 0;
+  float: left;
 }
 
-
-.radio{
-    margin-left: 0.5%;
-    padding-left: 0;
-    padding-bottom:2% ;  
-    align-items:left!important;
-    display:flex;
-    flex-direction: column;
-  
+form .col-md-12 {
+  display: flex;
+  flex-direction: column;
 }
 
-.selectName{
-    border-color: #4489F2;
-    color: #000;
-    border-radius: 5px;
-    display: flex;
-    position: relative;
-    justify-content: center;
-    align-items: center!important;  
+form button {
+  padding: 10px 55px 10px 55px;
+  border: none;
+  border-color: #4489f2;
+  color: white;
+  background-color: #4489f2;
+  border-radius: 5px;
+  margin-top: 4%;
+  cursor: pointer;
+  transition: all 0.3s;
 }
-#empregado{
-    display: flex;
-    flex-direction: column;
+
+button:hover {
+  background-color: #2677f0;
+}
+
+button:focus {
+  outline: none;
+}
+
+form p {
+  padding-top: 5%;
+  width: 80%;
+  font-size: 12px;
+  align-self: center;
+  text-align: center;
+}
+form a {
+  font-weight: bold;
+}
+
+.radio {
+  margin-left: 0.5%;
+  padding-left: 0;
+  padding-bottom: 2%;
+  align-items: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.selectName {
+  border-color: #4489f2;
+  color: #000;
+  border-radius: 5px;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+#empregado {
+  display: flex;
+  flex-direction: column;
 }
