@@ -1,16 +1,27 @@
 .principal{
-    height: 300px;
+    height: 320px;
     background-color: #C4C4C4!important;
    
 }
 
 
 .conteudo img{
-    margin-top: -90px;
-    border-radius: 65px;
-    width: 130px;
-    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    margin-top: -120px;
+    border-radius: 70px;
+    width: 140px;
+    height: 140px;
     bottom: 0;
+}
+.conteudo h3{
+    padding:5px 0 0 0;
+    margin-left: -12px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
 }
 
 .conteudo{
@@ -19,7 +30,51 @@
     margin-top: -20px;
     z-index: 10;
     background-color:#fff ;
-    height: calc(100vh - 280px);
+    height: calc(100vh - 320px);
     border-top-right-radius: 20px;
     border-top-left-radius:20px;
+}
+
+.cadVaga{
+    margin-right: 17%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cadVaga button{
+    border-radius:10px ;
+    padding:12px 30px 12px 30px;
+    border: none;
+    color: #fff;
+    background-color:#4D83D3;
+}
+
+.cadVaga img{
+    float: left;
+    margin: 0 5px 0 0;
+    width: 19px;
+    height: 19px;
+}
+
+.vagasCadastradas{
+    flex-direction: column;
+    padding:0;
+    margin:5% 12% 0 0;
+    display: flex;
+    justify-content: left;
+  
+}
+.vagasCadastradas h4{
+    text-align: center;
+}
+
+.mostrador{
+    border-radius: 10px;
+    margin:5% 0 0 0;
+    border: solid 1px;
+    border-color: rgb(143, 142, 142);
+    width: 270px;
+    height: 306px;
+
 }

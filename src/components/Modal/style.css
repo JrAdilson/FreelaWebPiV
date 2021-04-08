@@ -1,0 +1,78 @@
+.modal-backgroud{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 9999;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal{
+    border-radius: 12px;
+    background-color: #fff;
+    width: 70%;
+    height: 80%;
+    
+}
+
+.q1-modal{
+    margin: 3% 10% 1% 10%;
+    display: flex;
+    justify-content: center;
+    text-align: center!important;
+}
+
+hr{
+    margin: 0 10% 0 10%;
+}
+
+.q3-modal{
+   display: flex;
+   flex-direction: column;
+    
+}
+
+.q4-modal{
+    margin: 0 0 0 10%;
+ 
+    display: flex;
+    flex-direction: column;
+}
+
+.form-modal{
+    justify-content: center;
+    margin: 0 5% 0 5%;
+    flex-direction: row;
+    display: flex;
+   
+}
+
+.form-modal input{
+    padding-right: 120px;
+    margin: 0 0 5% 0;
+}
+
+.form-modal textarea{
+    border-color: #4489f2;
+    border-radius: 8px;
+    padding-right: 120px;
+    margin: 0;
+}
+
+.q5-btn{
+    margin: 5% 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.q5-btn .cancel{
+    margin-right: 2%;
+    background-color: red;
+}
