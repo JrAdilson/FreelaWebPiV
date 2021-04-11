@@ -2,10 +2,17 @@ import React, { useState } from 'react';
 import './style.css';
 
 
+
 const AddVaga = ({ onClose = () => { }, children }) => {
     const [isVaga, setIsVaga] = useState({});
     const [isDescricao, setIsDescricao] = useState({});
     const [isSalario, setIsSalario] = useState({});
+    const [isArea, setIsArea] = useState({});
+
+
+
+ 
+
 
     return (
         <>
@@ -42,13 +49,23 @@ const AddVaga = ({ onClose = () => { }, children }) => {
                                 value={isSalario.salario}
                                 onChange={(e) => setIsSalario({ ...isSalario, salario: e.target.value })}
                             />
+                            <label>Área de interesse</label>
+                            <select className='select-area'  onChange={(e) => setIsArea({ ...isArea, area: e.target.value })}>
+                                <option value=""></option>
+                                <option value="frontend">Frontend</option>
+                                <option value="backend">Backend</option>
+                                <option value="fullstack">Fullstack</option>
+                            </select>
+                            {isVaga.vaga}<br/>
+                            {isDescricao.descricao}<br/>
+                            {isSalario.salario}<br/>
+                            {isArea.area}
                         </div>
                     </form>
                     <div className='q5-btn'>
                         <button className='cancel' onClick={onClose}>Cancelar</button>
                         <button className='cad'>Cadastrar</button>
                     </div>
-
                     <div className='content'>{children}</div>
                 </div>
             </div>
