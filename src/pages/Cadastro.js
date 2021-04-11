@@ -14,7 +14,7 @@ const Cadastro = () => {
     event.preventDefault();
     if (isContratante) {
       await api
-        .post('/employer', {
+        .post('/employers', {
           name: usuario.nome,
           email: usuario.email,
           password: usuario.senha,
@@ -27,7 +27,7 @@ const Cadastro = () => {
     }
     if (isContratado) {
       await api
-        .post('/employee', {
+        .post('/employees', {
           name: usuario.nome,
           email: usuario.email,
           password: usuario.senha,
