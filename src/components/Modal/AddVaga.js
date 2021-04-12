@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './style.css';
-
+import api from '../../services/api';
 
 
 const AddVaga = ({ onClose = () => { }, children }) => {
@@ -9,9 +9,19 @@ const AddVaga = ({ onClose = () => { }, children }) => {
     const [isSalario, setIsSalario] = useState({});
     const [isArea, setIsArea] = useState({});
 
-
-
- 
+    const employer_id = 2;
+    const handleJob = async (event) => {
+        event.preventDefault();
+        await api
+            .post(`/employers/${employer_id}/jobs`, {
+                name: isVaga.vaga,
+                description: isDescricao.descricao,
+                salary: isSalario.salario,
+                dev_type: isArea.area,
+            })
+            .then((result) => console.log(result))
+            .catch((err) => console.log(err));
+    }
 
 
     return (
@@ -50,21 +60,21 @@ const AddVaga = ({ onClose = () => { }, children }) => {
                                 onChange={(e) => setIsSalario({ ...isSalario, salario: e.target.value })}
                             />
                             <label>Área de interesse</label>
-                            <select className='select-area'  onChange={(e) => setIsArea({ ...isArea, area: e.target.value })}>
+                            <select className='select-area' onChange={(e) => setIsArea({ ...isArea, area: e.target.value })}>
                                 <option value=""></option>
                                 <option value="frontend">Frontend</option>
                                 <option value="backend">Backend</option>
                                 <option value="fullstack">Fullstack</option>
                             </select>
-                            {isVaga.vaga}<br/>
-                            {isDescricao.descricao}<br/>
-                            {isSalario.salario}<br/>
-                            {isArea.area}
                         </div>
                     </form>
                     <div className='q5-btn'>
-                        <button className='cancel' onClick={onClose}>Cancelar</button>
-                        <button className='cad'>Cadastrar</button>
+                        <button className='cancel' onClick={onClose}>
+                            Cancelar
+                        </button>
+                        <button type="submit" className='cad' onClick={handleJob}>
+                            Cadastrar
+                        </button>
                     </div>
                     <div className='content'>{children}</div>
                 </div>
