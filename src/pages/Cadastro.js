@@ -33,6 +33,7 @@ const Cadastro = () => {
           password: usuario.senha,
           cellphone: usuario.telefone,
           formation: empregado.formacao,
+          dev_type: empregado.area,
         })
         .then((result) => console.log(result))
         .catch((err) => console.log(err));
@@ -139,6 +140,14 @@ const Cadastro = () => {
                     setEmpregado({ ...empregado, formacao: e.target.value })
                   }
                 />
+                
+                  <label>Stack</label>
+                  <select className="select-cad" onChange={(e) => setEmpregado({ ...empregado, area: e.target.value })}>
+                    <option value=""></option>
+                    <option value="frontend">Frontend</option>
+                    <option value="backend">Backend</option>
+                    <option value="fullstack">Fullstack</option>
+                  </select>
               </div>
             )}
           </div>
