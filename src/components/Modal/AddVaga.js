@@ -44,6 +44,7 @@ const AddVaga = ({ onClose = () => { }, children }) => {
                                 />
                                 <label>Descrição</label>
                                 <textarea
+                                    id="description"
                                     rows="9"
                                     name="descricao"
                                     value={isDescricao.descricao}

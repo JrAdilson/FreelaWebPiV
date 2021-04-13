@@ -32,6 +32,13 @@ hr{
     margin: 0 10% 0 10%;
 }
 
+.q2-modal textarea{
+    resize: none;
+}  
+.q2-modal textarea:focus{
+    outline: none;
+}
+
 .q3-modal{
    display: flex;
    flex-direction: column;
@@ -78,5 +85,10 @@ hr{
 .select-area{
     border-color: #4489f2;
     border-radius: 5px;
-    height: 30px;
+    height: 35px;
 }
+
+.select-area:focus {
+    outline: none;
+}
+
