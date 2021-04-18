@@ -1,17 +1,33 @@
-import React from 'react';
-import{BrowserRouter, Switch, Route} from 'react-router-dom';
+import React, { Component } from 'react';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import { isEmployeeAuthenticated } from './services/employeeAuth';
+import { isEmployerAuthenticated } from './services/employerAuth';
 import Home from './pages/Home'
 import Cadastro from './pages/Cadastro'
 import Login from './pages/Login'
 import Contratante from './pages/Contratante'
 
+const EmployerRoutes = ({ component: Component, ...rest }) => (
+    <Route {...rest} render={props =>
+        isEmployerAuthenticated() ? (<Component{...props} />) : (<Redirect to={{ pathname: '/', state: { from: props.location } }} />)
+    }
+    />
+)
+
+const EmployeeRoutes = ({ component: Component, ...rest }) => (
+    <Route {...rest} render={props =>
+        isEmployeeAuthenticated() ? (<Component{...props} />) : (<Redirect to={{ pathname: '/', state: { from: props.location } }} />)
+    }
+    />
+)
+
 const Routes = () => (
     <BrowserRouter>
         <Switch>
-            <Route path='/' exact component={Home}/>
-            <Route path='/cadastro' exact component={Cadastro}/>
-            <Route path='/login' exact component={Login}/>
-            <Route path='/contratante' exact component={Contratante}/>
+            <Route path='/' exact component={Home} />
+            <Route path='/cadastro' exact component={Cadastro} />
+            <Route path='/login' exact component={Login} />
+            <EmployerRoutes path='/contratante' component={Contratante}/>
         </Switch>
     </BrowserRouter>
 )
