@@ -14,7 +14,6 @@
    
 }
 
-
 .conteudo img{
     display: flex;
     align-items: center;
@@ -86,7 +85,7 @@
     border: solid 1px;
     border-color: rgb(143, 142, 142);
     width: 270px;
-    height: 306px;
+    height: 88%;
 
 }
 .desc-emp{
