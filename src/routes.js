@@ -8,15 +8,22 @@ import Login from './pages/Login'
 import Contratante from './pages/Contratante'
 
 const EmployerRoutes = ({ component: Component, ...rest }) => (
-    <Route {...rest} render={props =>
-        isEmployerAuthenticated() ? (<Component{...props} />) : (<Redirect to={{ pathname: '/', state: { from: props.location } }} />)
-    }
+    <Route
+        {...rest}
+        render={props =>
+            isEmployerAuthenticated()
+                ? (<Component{...props} />)
+                : (<Redirect to={{ pathname: '/', state: { from: props.location } }} />)
+        }
     />
 )
 
 const EmployeeRoutes = ({ component: Component, ...rest }) => (
+
     <Route {...rest} render={props =>
-        isEmployeeAuthenticated() ? (<Component{...props} />) : (<Redirect to={{ pathname: '/', state: { from: props.location } }} />)
+        isEmployeeAuthenticated()
+            ? (<Component{...props} />)
+            : (<Redirect to={{ pathname: '/', state: { from: props.location } }} />)
     }
     />
 )
@@ -27,7 +34,7 @@ const Routes = () => (
             <Route path='/' exact component={Home} />
             <Route path='/cadastro' exact component={Cadastro} />
             <Route path='/login' exact component={Login} />
-            <EmployerRoutes path='/contratante' component={Contratante}/>
+            <EmployerRoutes path='/contratante' component={Contratante} />
         </Switch>
     </BrowserRouter>
 )

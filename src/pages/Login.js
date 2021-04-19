@@ -24,7 +24,7 @@ const Login = () => {
           password: password,
         })
         .then((employer) => {
-          //employerLogin(employer.data.token, employer.data.employerId);
+          employerLogin(employer.data.token, employer.data.employerId);
           history.push('/contratante')
         })
         .catch((err) => console.log(err));
