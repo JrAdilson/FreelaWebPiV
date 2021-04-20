@@ -95,3 +95,40 @@
     justify-content: right;
     margin:2% -15% 0 10% ;
 }
+
+@media (min-width: 1600px) { 
+    .principal{
+        height: 500px;
+        background-color: #C4C4C4!important;
+       
+    }
+
+    .conteudo{
+        display: flex;
+        justify-content: center;
+        margin-top: -20px;
+        z-index: 10;
+        background-color:#fff ;
+        height: calc(100vh - 480px);
+        border-top-right-radius: 20px;
+        border-top-left-radius:20px;
+    }
+
+    .mostrador{
+        border-radius: 10px;
+        margin:1% 0 0 0;
+        border: solid 1px;
+        border-color: rgb(143, 142, 142);
+        width: 380px;
+        height: 88%;
+    
+    }
+
+    .desc-emp{
+        color: grey;
+        position: relative;
+        float: right;
+        justify-content: right;
+        margin:2% -15% 0 15% ;
+    }
+ }
