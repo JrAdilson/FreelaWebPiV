@@ -99,13 +99,14 @@
     margin:2% -15% 0 10% ;
 }
 li{
+    font-size: 14px;
     text-align: center;
     list-style: none;
-    padding-bottom: 5px;
+    padding-bottom: 2px;
     margin-bottom: 2px;
-    border: solid 0.8px;
+    border: solid 0.5px;
     border-color: rgb(143, 142, 142);
-    border-radius: 3px;
+    border-radius: 5px;
     width: 260px;
     
 }
