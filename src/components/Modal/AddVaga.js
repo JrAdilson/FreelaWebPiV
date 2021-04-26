@@ -9,11 +9,11 @@ const AddVaga = ({ onClose = () => { }, children }) => {
     const [isSalario, setIsSalario] = useState({});
     const [isArea, setIsArea] = useState({});
 
-    const employer_id = 2;
+    const employer_id = 4;
     const handleJob = async (event) => {
         event.preventDefault();
         await api
-            .post(`/employers/${employer_id}/jobs`, {
+            .post(`/jobs/employers/${employer_id}`, {
                 name: isVaga.vaga,
                 description: isDescricao.descricao,
                 salary: isSalario.salario,
@@ -22,8 +22,7 @@ const AddVaga = ({ onClose = () => { }, children }) => {
             .then((result) => console.log(result))
             .catch((err) => console.log(err));
     }
-
-
+   
     return (
         <>
             <div className='modal-backgroud'>

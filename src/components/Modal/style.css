@@ -91,4 +91,16 @@ hr{
 .select-area:focus {
     outline: none;
 }
+@media (min-width: 1600px) { 
+    .form-modal input{
+        width: 500px;
+        margin: 0 0 10% 0;
+    }
 
+    .q5-btn{
+        margin:15% 0 0 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+ }
