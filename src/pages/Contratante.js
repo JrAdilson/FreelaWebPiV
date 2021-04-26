@@ -1,18 +1,29 @@
-import React, { useState } from 'react';
+import React, { component, useEffect, useState } from 'react';
 import Header from '../components/Header/index';
 import '../styles/pages/contratante.css';
 import gandalf2 from '../assets/img/gandalf2.jpeg';
 import mais from '../assets/img/mais.png';
 import foto from '../assets/img/foto.png';
 import AddVaga from '../components/Modal/AddVaga';
+import api from '../services/api';
 
 
 
 const PerfilContratante = () => {
     const [isModalVisible, setIsModalVisible] = useState(false);
-
     const [isCargo, setIsCargo] = useState("Mago");
     const [isEmpresa, setIsEmpresa] = useState("Sociedade do Anel™");
+    const [isLista, setLista] = useState([]);
+
+    useEffect(() => {
+        listarDados();
+    }, [])
+
+    async function listarDados() {
+        const res = await api.get('/jobs');
+        setLista(res.data);
+        console.log(res.data);
+    }
 
 
     return (
@@ -25,7 +36,11 @@ const PerfilContratante = () => {
                 <div className='vagasCadastradas'>
                     <h4>Vagas cadastradas</h4>
                     <div className='mostrador'>
-
+                        <ul className='ul-lista'>
+                            {isLista.map(item => (
+                                <li className='lista-vaga'><a href="">{item.name}</a></li>
+                            ))}
+                        </ul>
                     </div>
                 </div>
                 <div className="profile">

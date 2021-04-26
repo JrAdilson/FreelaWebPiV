@@ -5,42 +5,20 @@ import '../styles/pages/login.css';
 import login4 from '../assets/img/login4.png';
 import login3 from '../assets/img/login3.png';
 import api from '../services/api';
-import {employerLogin} from '../services/employerAuth';
-import {employeeLogin} from '../services/employeeAuth';
+
 
 const Login = () => {
-  const [isContratante, setIsContratante] = useState(false);
-  const [isContratado, setIsContratado] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const history = useHistory();
 
   const handleLogin = async (event) => {
     event.preventDefault();
-    if (isContratante) {
       await api
-        .post('/employers/auth', {
+        .post('/auth', {
           email: email,
           password: password,
         })
-        .then((employer) => {
-          employerLogin(employer.data.token, employer.data.employerId);
-          history.push('/contratante')
-        })
-        .catch((err) => console.log(err));
-    }
-    if (isContratado) {
-      await api
-        .post('/employees/auth', {
-          email: email,
-          password: password,
-        })
-        .then((employee) => {
-        employeeLogin(employee.data.token, employee.data.employerId);
-        //(history.push('/')
-        })
-        .catch((err) => console.log(err));
-    }
+        
   };
   return (
     <>
@@ -50,32 +28,6 @@ const Login = () => {
         <form className='login1'>
           <h3>Entrar</h3>
           <hr />
-          <div className="radio">
-            <div className="radio1">
-              <input
-                type="radio"
-                id="contratante"
-                name="radiocadastro"
-                onChange={() => {
-                  setIsContratante(true);
-                  setIsContratado(false);
-                }}
-              />
-                    Contratando
-              </div>
-            <div className="radio2">
-              <input
-                type="radio"
-                id="contratado"
-                name="radiocadastro"
-                onChange={() => {
-                  setIsContratante(false);
-                  setIsContratado(true);
-                }}
-              />
-                    Buscando Vaga
-              </div>
-            {(isContratante || isContratado) && (
               <>
                 <label>Email</label>
                 <input
@@ -85,7 +37,6 @@ const Login = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
-
                 <label>Senha</label>
                 <input
                   type='password'
@@ -99,8 +50,6 @@ const Login = () => {
                 </div>
                 <button type='submit' name='login' onClick={handleLogin}>Entrar</button>
               </>
-            )}
-          </div>
         </form>
         <img className='conteudo2' alt="login4" src={login4} />
       </div>
