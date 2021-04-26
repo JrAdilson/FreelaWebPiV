@@ -18,7 +18,19 @@ const Login = () => {
           email: email,
           password: password,
         })
-        
+
+        .then((response) => {
+          if(response.data.employerId){
+            employerLogin(response.data.token, response.data.employerId);
+            history.push('/contratante')
+          }
+          if(response.data.employeeId){
+            employeeLogin(response.data.token, response.data.employeeId);
+            //history.push('/contratado')
+          }
+        })
+        .catch((err) => console.log(err));
+
   };
   return (
     <>
@@ -28,7 +40,7 @@ const Login = () => {
         <form className='login1'>
           <h3>Entrar</h3>
           <hr />
-              <>
+
                 <label>Email</label>
                 <input
                   type='email'
@@ -49,7 +61,7 @@ const Login = () => {
                   <Link to="/login">Esqueceu a senha?</Link>
                 </div>
                 <button type='submit' name='login' onClick={handleLogin}>Entrar</button>
-              </>
+
         </form>
         <img className='conteudo2' alt="login4" src={login4} />
       </div>
