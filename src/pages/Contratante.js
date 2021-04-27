@@ -7,8 +7,6 @@ import foto from '../assets/img/foto.png';
 import AddVaga from '../components/Modal/AddVaga';
 import api from '../services/api';
 
-
-
 const PerfilContratante = () => {
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [isCargo, setIsCargo] = useState("Mago");

@@ -7,6 +7,7 @@ const AddVaga = ({ onClose = () => { }, children }) => {
     const [isVaga, setIsVaga] = useState({});
     const [isDescricao, setIsDescricao] = useState({});
     const [isSalario, setIsSalario] = useState({});
+    const [tecnologias, setTecnologias] = useState("");
     const [isArea, setIsArea] = useState({});
 
     const employer_id = 4;
@@ -18,11 +19,13 @@ const AddVaga = ({ onClose = () => { }, children }) => {
                 description: isDescricao.descricao,
                 salary: isSalario.salario,
                 dev_type: isArea.area,
+                technologies: tecnologias
             })
             .then((result) => console.log(result))
             .catch((err) => console.log(err));
+            
     }
-   
+
     return (
         <>
             <div className='modal-backgroud'>
@@ -61,11 +64,19 @@ const AddVaga = ({ onClose = () => { }, children }) => {
                             />
                             <label>Área de interesse</label>
                             <select className='select-area' onChange={(e) => setIsArea({ ...isArea, area: e.target.value })}>
-                                <option value=""></option>
+                                <option value="default"></option>
                                 <option value="frontend">Frontend</option>
                                 <option value="backend">Backend</option>
                                 <option value="fullstack">Fullstack</option>
                             </select>
+                            <label>Tecnologias</label>
+                            <input
+                                type="text"
+                                name="salario"
+                                value={tecnologias}
+                                onChange={(e) => setTecnologias(e.target.value)}
+                            />
+
                         </div>
                     </form>
                     <div className='q5-btn'>
