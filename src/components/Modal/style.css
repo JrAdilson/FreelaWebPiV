@@ -78,7 +78,7 @@ hr{
     align-items: center;
 }
 
-.q5-btn .cancel{
+.modal .cancel{
     margin-right: 2%;
     background-color: red;
 }
