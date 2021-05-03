@@ -1,4 +1,4 @@
-import React, { component, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from '../components/Header/index';
 import '../styles/pages/contratante.css';
 import gandalf2 from '../assets/img/gandalf2.jpeg';
@@ -8,12 +8,13 @@ import AddVaga from '../components/Modal/AddVaga';
 import api from '../services/api';
 
 
-
 const PerfilContratante = () => {
-    const [isModalVisible, setIsModalVisible] = useState(false);
-    const [isCargo, setIsCargo] = useState("Mago");
-    const [isEmpresa, setIsEmpresa] = useState("Sociedade do Anel™");
-    const [isLista, setLista] = useState([]);
+    const [isModalCadastroVisible, setIsModalCadastroVisible] = useState(false);
+    const [isModalListaVisible, setIsModalListaVisible] = useState(false);
+    const [Cargo, setIsCargo] = useState("Mago");
+    const [Empresa, setIsEmpresa] = useState("Sociedade do Anel™");
+    const [Lista, setLista] = useState([]);
+    const [vagaAtual, setVagaAtual] = useState([]);
 
     useEffect(() => {
         listarDados();
@@ -25,6 +26,12 @@ const PerfilContratante = () => {
         console.log(res.data);
     }
 
+    function handlePressJob(job){
+        setVagaAtual(job);
+        setIsModalListaVisible(true);
+        
+    }
+    console.log(vagaAtual);
 
     return (
         <>
@@ -37,8 +44,10 @@ const PerfilContratante = () => {
                     <h4>Vagas cadastradas</h4>
                     <div className='mostrador'>
                         <ul className='ul-lista'>
-                            {isLista.map(item => (
-                                <li className='lista-vaga'><a href="">{item.name}</a></li>
+                            {Lista.map(item => (
+                                <p className="p-listaVaga" onClick={() => handlePressJob(item)}>
+                                    <li className='lista-vaga'>{item.name}</li>
+                                </p>
                             ))}
                         </ul>
                     </div>
@@ -48,12 +57,14 @@ const PerfilContratante = () => {
                     <h3>Gandalf, o Cinzento</h3>
                     <hr />
                 </div>
-                <p className='desc-emp'>{isCargo} na empresa {isEmpresa}</p>
+                <p className='desc-emp'>{Cargo} na empresa {Empresa}</p>
                 <div className='cadVaga'>
-                    <button onClick={() => setIsModalVisible(true)}><img src={mais}></img>Adicionar nova vaga</button>
-                    {isModalVisible ? (
-                        <AddVaga onClose={() => setIsModalVisible(false)}>
-                        </AddVaga>
+                    <button onClick={() => setIsModalCadastroVisible(true)}><img src={mais}></img>Adicionar nova vaga</button>
+                    {isModalCadastroVisible ? (
+                        <AddVaga cadastro onClose={() => setIsModalCadastroVisible(false)}/>
+                    ) : null}
+                    {isModalListaVisible ? (
+                        <AddVaga job={vagaAtual} onClose={() => setIsModalListaVisible(false)}/>
                     ) : null}
                 </div>
             </div>

@@ -65,6 +65,7 @@ hr{
 }
 
 .form-modal textarea{
+    padding-left: 8px;
     border-color: #4489f2;
     border-radius: 8px;
     margin: 0;
@@ -77,7 +78,7 @@ hr{
     align-items: center;
 }
 
-.q5-btn .cancel{
+.modal .cancel{
     margin-right: 2%;
     background-color: red;
 }

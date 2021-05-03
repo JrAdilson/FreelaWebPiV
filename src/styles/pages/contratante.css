@@ -51,6 +51,7 @@
 }
 
 .cadVaga button{
+    cursor: pointer;
     z-index: 9;
     margin: 10% 0 0 0;
     border-radius:10px ;
@@ -88,8 +89,10 @@
     border-color: rgb(143, 142, 142);
     width: 270px;
     height: 88%;
-    padding-top: 5px;
-
+    padding-top: 7px;
+}
+.mostrador p{
+    color: grey!important;
 }
 .desc-emp{
     color: grey;
@@ -99,20 +102,22 @@
     margin:2% -15% 0 10% ;
 }
 li{
+   
+    background-color: #e9e9e9;
     font-size: 14px;
     text-align: center;
     list-style: none;
-    padding-bottom: 2px;
-    margin-bottom: 2px;
     border: solid 0.5px;
-    border-color: rgb(143, 142, 142);
-    border-radius: 5px;
+    border-color: rgb(209, 208, 208);
+    padding-bottom: 2px;
+    margin-bottom: 7px;
+    border-radius: 3px;
     width: 260px;
-    
 }
-a{
-    text-decoration: none;
+.p-listaVaga{
+  cursor: pointer;
 }
+
 
 @media (min-width: 1600px) { 
     .principal{
@@ -152,6 +157,7 @@ a{
         margin:2% -15% 0 15% ;
     }
     li{
+       
         text-align: center;
         list-style: none;
         padding-bottom: 5px;
@@ -162,7 +168,6 @@ a{
         width: 370px;
         
     }
-    a{
-        text-decoration: none;
-    }
+
+    
  }

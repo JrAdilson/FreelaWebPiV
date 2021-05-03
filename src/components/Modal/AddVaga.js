@@ -3,32 +3,61 @@ import './style.css';
 import api from '../../services/api';
 
 
-const AddVaga = ({ onClose = () => { }, children }) => {
-    const [isVaga, setIsVaga] = useState({});
-    const [isDescricao, setIsDescricao] = useState({});
-    const [isSalario, setIsSalario] = useState({});
-    const [isArea, setIsArea] = useState({});
+
+const AddVaga = ({ onClose = () => { }, job = null, cadastro = null, children }) => {
+    const [nome, setNome] = useState(cadastro ? '' : job.name);
+    const [descricao, setDescricao] = useState(cadastro ? '' : job.description);
+    const [salario, setSalario] = useState(cadastro ? '' : job.salary);
+    const [area, setArea] = useState(cadastro ? '' : job.dev_type);
+    const [tecnologias, setTecnologias] = useState(cadastro ? '' : job.technologies);
 
     const employer_id = 4;
     const handleJob = async (event) => {
         event.preventDefault();
         await api
             .post(`/jobs/employers/${employer_id}`, {
-                name: isVaga.vaga,
-                description: isDescricao.descricao,
-                salary: isSalario.salario,
-                dev_type: isArea.area,
+                name: nome,
+                description: descricao,
+                salary: salario,
+                dev_type: area,
+                technologies: tecnologias
             })
             .then((result) => console.log(result))
             .catch((err) => console.log(err));
+
     }
-   
+    /*const deletarVaga = async (event) => {
+        event.preventDefault();
+        await api
+            .delete(`/jobs/${job.id}`)
+            .then((result) => console.log(result))
+            .catch((err) => console.log(err));
+            onClose();
+            
+    }*/
+
+    const editarVaga = async (event) => {
+        event.preventDefault();
+        await api
+            .put(`/jobs/${job.id}/update`, {
+                name: nome,
+                description: descricao,
+                salary: salario,
+                dev_type: area,
+                technologies: tecnologias
+            })
+            .then((result) => console.log(result))
+            .catch((err) => console.log(err));
+        onClose();
+
+    }
+
     return (
         <>
             <div className='modal-backgroud'>
                 <div className='modal'>
                     <div className='q1-modal'>
-                        <h2>Cadastrar nova vaga</h2>
+                        <h2>{cadastro ? 'Cadastrar nova vaga' : 'Editar Vaga'}</h2>
                     </div>
                     <hr />
                     <form className='form-modal'>
@@ -38,16 +67,16 @@ const AddVaga = ({ onClose = () => { }, children }) => {
                                 <input
                                     type="text"
                                     name="vaga"
-                                    value={isVaga.vaga}
-                                    onChange={(e) => setIsVaga({ ...isVaga, vaga: e.target.value })}
+                                    value={nome}
+                                    onChange={(e) => setNome(e.target.value)}
                                 />
                                 <label>Descrição</label>
                                 <textarea
                                     id="description"
                                     rows="9"
                                     name="descricao"
-                                    value={isDescricao.descricao}
-                                    onChange={(e) => setIsDescricao({ ...isDescricao, descricao: e.target.value })}
+                                    value={descricao}
+                                    onChange={(e) => setDescricao(e.target.value)}
                                 />
                             </div>
                         </div>
@@ -56,24 +85,35 @@ const AddVaga = ({ onClose = () => { }, children }) => {
                             <input
                                 type="text"
                                 name="salario"
-                                value={isSalario.salario}
-                                onChange={(e) => setIsSalario({ ...isSalario, salario: e.target.value })}
+                                value={salario}
+                                onChange={(e) => setSalario(e.target.value)}
                             />
                             <label>Área de interesse</label>
-                            <select className='select-area' onChange={(e) => setIsArea({ ...isArea, area: e.target.value })}>
-                                <option value=""></option>
+                            <select className='select-area' onChange={(e) => setArea(e.target.value)}>
+                                <option value={cadastro ? 'default' : job.dev_type} >{!cadastro && job.dev_type}</option>
                                 <option value="frontend">Frontend</option>
                                 <option value="backend">Backend</option>
                                 <option value="fullstack">Fullstack</option>
                             </select>
+                            <label>Tecnologias</label>
+                            <input
+                                type="text"
+                                name="salario"
+                                value={tecnologias}
+                                onChange={(e) => setTecnologias(e.target.value)}
+                            />
+
                         </div>
                     </form>
                     <div className='q5-btn'>
                         <button className='cancel' onClick={onClose}>
                             Cancelar
                         </button>
-                        <button type="submit" className='cad' onClick={handleJob}>
-                            Cadastrar
+                        {/* {!cadastro && <button className='cancel' onClick={deletarVaga}>
+                            Excluir
+                        </button>} */}
+                        <button type="submit" className='cad' onClick={cadastro ? handleJob : editarVaga}>
+                            {cadastro ? 'Cadastrar' : 'Editar'}
                         </button>
                     </div>
                     <div className='content'>{children}</div>
