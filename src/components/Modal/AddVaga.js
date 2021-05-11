@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 import './style.css';
 import api from '../../services/api';
-
-
-
 const AddVaga = ({ onClose = () => { }, job = null, cadastro = null, children }) => {
     const [nome, setNome] = useState(cadastro ? '' : job.name);
     const [descricao, setDescricao] = useState(cadastro ? '' : job.description);
