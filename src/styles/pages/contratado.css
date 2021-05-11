@@ -1,0 +1,172 @@
+.principal{
+    height: 320px;
+    background-color: #C4C4C4!important;
+   
+}
+
+#foto{
+    border-radius: 5px;
+    background-color:darkgray;
+    z-index: 9;
+    float: right;
+    margin: 115px 15px 0 0;
+    width: 30px;
+   
+}
+
+.conteudo img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -120px;
+    border-radius: 70px;
+    width: 140px;
+    height: 140px;
+    bottom: 0;
+}
+.conteudo h3{
+    padding:5px 0 0 0;
+    margin-left: -12px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.conteudo{
+    display: flex;
+    justify-content: center;
+    margin-top: -20px;
+    z-index: 10;
+    background-color:#fff ;
+    height: calc(100vh - 300px);
+    border-top-right-radius: 20px;
+    border-top-left-radius:20px;
+}
+.allBox{
+    flex-direction: column;
+    padding:0;
+    margin:4% 12% 0 0;
+    display: flex;
+    justify-content: left;
+    margin-right: 50px;
+}
+.allBox h4{ 
+    text-align: center;
+}
+.allBox1{
+    flex-direction: column;
+    padding:0;
+    margin:4% 12% 0 0;
+    display: flex;
+    justify-content: left;
+    margin-left: 50px;
+}
+.allBox1 h4{ 
+    text-align: center;
+}
+.allBox2{
+    flex-direction: column;
+    padding:0;
+    margin:4% 12% 0 0;
+    display: flex;
+    justify-content: left;
+    margin-right: 50px;
+}
+.allBox2 h4{
+    text-align: center;
+}
+.mostradorBlue{
+    border-radius: 10px;
+    border: solid 1px;
+    border-color: #365E9A;
+    background-color: #4f74ac;
+    width: 184px;
+    height: 129px;
+    margin-right: 50px;
+    margin-bottom: 15px;
+}
+.mostradorBlue h3{
+    color: #fff;
+}
+.mostradorBlue h4{
+    color: #fff;
+}
+.mostradorBlue img{
+    flex: 1;
+}
+.mostradorBlue1{
+    border-radius: 10px;
+    border: solid 1px;
+    border-color: #365E9A;
+    background-color: #4f74ac;
+    width: 184px;
+    height: 129px;
+    margin-right: 50px;
+}
+.mostradorBlue1 h3{
+    color: #fff;
+}
+.mostradorBlue1 h4{
+    color: #fff;
+}
+.mostrador{
+    border-radius: 10px;
+    border: solid 1px;
+    border-color: rgb(143, 142, 142);
+    width: 428px;
+    height: 102px;
+}
+.cadVaga button{
+    z-index: 9;
+    margin: 10% 0 0 0;
+    border-radius:10px ;
+    padding:12px 40px 12px 40px;
+    border: none;
+    color: #fff;
+    background-color:#4D83D3;
+}
+@media (min-width: 1600px) { 
+    .principal{
+        height: 500px;
+        background-color: #C4C4C4!important;
+       
+    }
+
+    .conteudo{
+        display: flex;
+        justify-content: center;
+        margin-top: -20px;
+        z-index: 10;
+        background-color:#fff ;
+        height: calc(100vh - 480px);
+        border-top-right-radius: 20px;
+        border-top-left-radius:20px;
+    }
+
+    .mostrador{
+        border-radius: 10px;
+        margin:1% 0 0 0;
+        border: solid 1px;
+        border-color: rgb(143, 142, 142);
+        width: 380px;
+        height: 90px;
+    
+    }
+    .cadVaga button{
+        z-index: 9;
+        margin: 10% 0 0 0;
+        border-radius:10px ;
+        padding:12px 40px 12px 40px;
+        border: none;
+        color: #fff;
+        background-color:#4D83D3;
+    }
+ }
+ #maleta{
+     width: 32px;
+     height: 29px;
+ }
+ #mao{
+     width: 44px;
+     height: 42px;
+ }

@@ -6,6 +6,8 @@ import Home from './pages/Home'
 import Cadastro from './pages/Cadastro'
 import Login from './pages/Login'
 import Contratante from './pages/Contratante'
+import Contratado from './pages/Contratado'
+import AllVagas from './pages/AllVagas'
 
 const EmployerRoutes = ({ component: Component, ...rest }) => (
     <Route
@@ -34,7 +36,9 @@ const Routes = () => (
             <Route path='/' exact component={Home} />
             <Route path='/cadastro' exact component={Cadastro} />
             <Route path='/login' exact component={Login} />
+            <Route path='/allvagas' exact component={AllVagas}/>
             <EmployerRoutes path='/contratante' component={Contratante} />
+            <EmployeeRoutes path= '/contratado' component={Contratado} />
         </Switch>
     </BrowserRouter>
 )

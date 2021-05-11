@@ -18,7 +18,6 @@
     background-color: #fff;
     width: 70%;
     height: 80%;
-    
 }
 
 .q1-modal{
@@ -77,6 +76,12 @@ hr{
     justify-content: center;
     align-items: center;
 }
+.q6-btn{
+    margin:-2% -25% 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .modal .cancel{
     margin-right: 2%;
@@ -91,6 +96,27 @@ hr{
 
 .select-area:focus {
     outline: none;
+}
+.modalMostrador{
+    border-radius: 10px;
+    border: solid 1px;
+    border-color: rgb(59, 93, 185);
+    width: 90%;
+    height: 90%;
+    margin: 65px;
+}
+.modalSuper{
+    border-radius: 12px;
+    background-color: #fff;
+    width: 70%;
+    height: 80%;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+.ul-lista{
+    display: flex;
+    flex-direction: row;
 }
 @media (min-width: 1600px) { 
     .form-modal input{

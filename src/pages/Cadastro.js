@@ -42,7 +42,7 @@ const Cadastro = () => {
 
   return (
     <>
-      <Header />
+      <Header/>
       <div className="conteudoCadastro">
         <form className="cadastro1">
           <div className="col-md-12">
@@ -140,7 +140,6 @@ const Cadastro = () => {
                     setEmpregado({ ...empregado, formacao: e.target.value })
                   }
                 />
-                
                   <label>Stack</label>
                   <select className="select-cad" onChange={(e) => setEmpregado({ ...empregado, area: e.target.value })}>
                     <option value=""></option>
