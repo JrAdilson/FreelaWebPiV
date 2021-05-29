@@ -23,15 +23,15 @@ const AddVaga = ({ onClose = () => { }, job = null, cadastro = null, children })
             .catch((err) => console.log(err));
 
     }
-    /*const deletarVaga = async (event) => {
+    const deletarVaga = async (event) => {
         event.preventDefault();
         await api
             .delete(`/jobs/${job.id}`)
             .then((result) => console.log(result))
             .catch((err) => console.log(err));
-            onClose();
-            
-    }*/
+        onClose();
+
+    }
 
     const editarVaga = async (event) => {
         event.preventDefault();
@@ -66,6 +66,7 @@ const AddVaga = ({ onClose = () => { }, job = null, cadastro = null, children })
                                     name="vaga"
                                     value={nome}
                                     onChange={(e) => setNome(e.target.value)}
+
                                 />
                                 <label>Descrição</label>
                                 <textarea
@@ -99,16 +100,18 @@ const AddVaga = ({ onClose = () => { }, job = null, cadastro = null, children })
                                 value={tecnologias}
                                 onChange={(e) => setTecnologias(e.target.value)}
                             />
-
+                            <div className='btn-del'>
+                                {!cadastro && <button className='delete' onClick={deletarVaga}>
+                                    Excluir
+                                </button>}
+                            </div>
                         </div>
                     </form>
                     <div className='q5-btn'>
                         <button className='cancel' onClick={onClose}>
                             Cancelar
                         </button>
-                        {/* {!cadastro && <button className='cancel' onClick={deletarVaga}>
-                            Excluir
-                        </button>} */}
+
                         <button type="submit" className='cad' onClick={cadastro ? handleJob : editarVaga}>
                             {cadastro ? 'Cadastrar' : 'Editar'}
                         </button>

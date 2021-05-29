@@ -26,12 +26,11 @@ const PerfilContratante = () => {
         console.log(res.data);
     }
 
+
     function handlePressJob(job){
         setVagaAtual(job);
-        setIsModalListaVisible(true);
-        
+        setIsModalListaVisible(true); 
     }
-    console.log(vagaAtual);
 
     return (
         <>
@@ -66,6 +65,8 @@ const PerfilContratante = () => {
                     {isModalListaVisible ? (
                         <AddVaga job={vagaAtual} onClose={() => setIsModalListaVisible(false)}/>
                     ) : null}
+
+                    <button id='curtidas'>Vagas Curtidas</button>
                 </div>
             </div>
         </>

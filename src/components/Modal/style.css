@@ -85,7 +85,17 @@ hr{
 
 .modal .cancel{
     margin-right: 2%;
+    background-color: rgb(148, 18, 18);
+}
+.btn-del{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.modal .delete{
+    margin-right: 2%;
     background-color: red;
+    width: 50%;
 }
 
 .select-area{
