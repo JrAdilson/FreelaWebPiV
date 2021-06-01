@@ -48,6 +48,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
 .cadVaga button{
@@ -102,7 +103,6 @@
     margin:2% -15% 0 10% ;
 }
 li{
-   
     background-color: #e9e9e9;
     font-size: 14px;
     text-align: center;
@@ -114,8 +114,17 @@ li{
     border-radius: 3px;
     width: 260px;
 }
+li:hover{
+    padding: 3px 10px 3px 10px;
+    color: #fff;
+    background-color: #4D83D3;
+}
 .p-listaVaga{
   cursor: pointer;
+}
+.ul-lista{
+    display: flex;
+    flex-direction: column!important;
 }
 
 
@@ -145,7 +154,7 @@ li{
         border: solid 1px;
         border-color: rgb(143, 142, 142);
         width: 380px;
-        height: 88%;
+        height: 480px!important;
     
     }
 
@@ -157,7 +166,6 @@ li{
         margin:2% -15% 0 15% ;
     }
     li{
-       
         text-align: center;
         list-style: none;
         padding-bottom: 5px;

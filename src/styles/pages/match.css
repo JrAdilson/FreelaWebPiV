@@ -1,0 +1,57 @@
+.pg{
+    background-color: #4D83D3;
+    height:100vh;
+    padding-top: 150px;
+}
+.pg hr{
+    margin-top: 7px;
+    margin-right: 42%;
+    margin-left: 42%;
+}
+.cont-pg{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.cont-pg h1{
+    font-family: permanent marker;
+    font-size: 60px;
+    color: white;
+    padding-bottom: 10px;
+}
+.cont-pg p{
+    font-size: 20px;
+    color: white;
+}
+.cont-pg b{
+    font-size: 21px;
+    color: white;
+}
+.des-pg{
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.des-pg p{
+    font-size: 20px;
+    color: white;
+}
+.btn-pg{
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.match-btn{
+    color: white;
+    background-color: #4D83D3;
+    border:solid 0.8px;
+    border-color: white;
+    border-radius: 20px;
+    width: 15%;
+    padding-top:10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+}
