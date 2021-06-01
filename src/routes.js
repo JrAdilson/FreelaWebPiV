@@ -9,6 +9,7 @@ import Match from './pages/Match'
 import Contratante from './pages/Contratante'
 import Contratado from './pages/Contratado'
 import AllVagas from './pages/AllVagas'
+import EmployeeLike from './pages/EmployeeLike';
 
 const EmployerRoutes = ({ component: Component, ...rest }) => (
     <Route
@@ -41,6 +42,7 @@ const Routes = () => (
             <Route path='/match' exact component={Match} />
             <EmployerRoutes path='/contratante' component={Contratante} />
             <EmployeeRoutes path= '/contratado' component={Contratado} />
+            <EmployerRoutes path='/vagas/:idvaga/candidatos' component={EmployeeLike} />
         </Switch>
     </BrowserRouter>
 )

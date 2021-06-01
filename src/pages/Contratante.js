@@ -5,12 +5,14 @@ import gandalf2 from '../assets/img/gandalf2.jpeg';
 import mais from '../assets/img/mais.png';
 import foto from '../assets/img/foto.png';
 import AddVaga from '../components/Modal/AddVaga';
+import VagasCurtidas from '../components/Modal/VagasCurtidas';
 import api from '../services/api';
 
 
 const PerfilContratante = () => {
     const [isModalCadastroVisible, setIsModalCadastroVisible] = useState(false);
     const [isModalListaVisible, setIsModalListaVisible] = useState(false);
+    const [isModalCurtidasVisible, setIsModalCurtidasVisible] = useState(false);
     const [Cargo, setIsCargo] = useState("Mago");
     const [Empresa, setIsEmpresa] = useState("Sociedade do Anel™");
     const [Lista, setLista] = useState([]);
@@ -21,7 +23,7 @@ const PerfilContratante = () => {
     }, [])
 
     async function listarDados() {
-        const res = await api.get('/jobs');
+        const res = await api.get('/jobs/employers/4');
         setLista(res.data);
         console.log(res.data);
     }
@@ -65,8 +67,10 @@ const PerfilContratante = () => {
                     {isModalListaVisible ? (
                         <AddVaga job={vagaAtual} onClose={() => setIsModalListaVisible(false)}/>
                     ) : null}
-
-                    <button id='curtidas'>Vagas Curtidas</button>
+                    <button id='curtidas'  onClick={() => setIsModalCurtidasVisible(true)} >Candidatos</button>
+                    {isModalCurtidasVisible ? (
+                        <VagasCurtidas cadastro onClose={() => setIsModalCurtidasVisible(false)}/>
+                    ) : null}
                 </div>
             </div>
         </>
