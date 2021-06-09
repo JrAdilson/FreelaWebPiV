@@ -4,15 +4,23 @@ import api from '../../services/api';
 import { useHistory } from 'react-router-dom';
 const VagasCurtidas = ({ onClose = () => { }, children }) => {
     const [Lista, setLista] = useState([]);
+    const [Lista2, setLista2] = useState([]);
     const history = useHistory();
     const employerid = 4;
     useEffect(() => {
         listarDados();
+        listarDados2();
     }, [])
 
     async function listarDados() {
         const res = await api.get(`/jobs/employers/${employerid}`);
         setLista(res.data);
+        console.log(res.data);
+    }
+
+    async function listarDados2() {
+        const res = await api.get(`/employers/${employerid}/jobs/3/matches`);
+        setLista2(res.data);
         console.log(res.data);
     }
 
@@ -33,9 +41,11 @@ const VagasCurtidas = ({ onClose = () => { }, children }) => {
                          <ul className='like-lista'>
                             {Lista.map(item => (
                                 <p className="p-listaVaga" onClick={() => handlePressJob(item)}>
-                                    <li className='lista-vagaCurtida'>{item.name}</li>
+                                    <li className='lista-vagaCurtida'>{item.name}</li> 
                                 </p>
+                                
                             ))}
+                            <p id='contador'>{Lista2?.length}</p>
                         </ul>
                     </div>
                 </div>
