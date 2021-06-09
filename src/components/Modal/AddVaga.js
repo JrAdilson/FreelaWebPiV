@@ -21,6 +21,7 @@ const AddVaga = ({ onClose = () => { }, job = null, cadastro = null, children })
             })
             .then((result) => console.log(result))
             .catch((err) => console.log(err));
+        window.location.replace("/contratante");
 
     }
     const deletarVaga = async (event) => {
@@ -29,7 +30,9 @@ const AddVaga = ({ onClose = () => { }, job = null, cadastro = null, children })
             .delete(`/jobs/${job.id}`)
             .then((result) => console.log(result))
             .catch((err) => console.log(err));
+        window.location.replace("/contratante");
         onClose();
+        
 
     }
 
@@ -45,8 +48,9 @@ const AddVaga = ({ onClose = () => { }, job = null, cadastro = null, children })
             })
             .then((result) => console.log(result))
             .catch((err) => console.log(err));
-        onClose();
-
+            alert("Vaga editada com sucesso!");
+            window.location.replace("/contratante");
+            onClose();
     }
 
     return (

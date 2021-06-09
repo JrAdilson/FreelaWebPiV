@@ -13,6 +13,7 @@
 }
 
 .q1-freela p{
+    text-align: justify;
     color: #000;
     padding-left: 6%;
 }
@@ -29,6 +30,11 @@
     flex-direction: row;
     align-items: center;
 }
+#contract{
+    border-radius: 50px;
+ width: 100px;
+ height: 100px;
+}
 
 .q3-freela2{
     padding:0 1% 0 1% ;
@@ -41,6 +47,7 @@
     margin:5% 15% 0 15%;
 }
 .q4-freela p{
+
     text-align: center;
     color: #000;
 }
