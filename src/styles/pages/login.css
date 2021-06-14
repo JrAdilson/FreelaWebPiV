@@ -1,4 +1,4 @@
-.container{
+.container {
   width: 100%;
   height: calc(100vh - 105px);
   padding-top: 200px;
@@ -7,46 +7,50 @@
   justify-content: center;
 }
 
-.login1{
+.login1 {
   display: flex !important;
-  flex-direction: column!important;
+  flex-direction: column !important;
   width: 480px;
   font-family: poppins;
-   box-shadow: -3px -4px 5px rgb(182, 180, 180);
-   font-family: poppins!;
-   border:solid 2px;
-   border-color: #4489F2;
-   border-radius: 15px;
-   padding-left: 1.5%;
-   padding-right: 2%;
-   padding-bottom: 4%;
-   padding-top: 2%;
+  box-shadow: -3px -3px 15px rgb(182, 180, 180);
+  font-family: poppins!;
+  border-radius: 15px;
+  padding-left: 1.5%;
+  padding-right: 2%;
+  padding-bottom: 3%;
+  padding-top: 2%;
 }
 
-.login1 button{
-    margin: 0 30% 0 30%;
-    border: none;
-    border-color: #4489F2;
-    color: white;
-    background-color: #4489F2;
-    border-radius: 5px;
-    margin-top: 5%;
-    display: flex;
-    align-items: center!important;  
-    justify-content:center;
-  }
-  .esqSenha{
-      margin: 2%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-  }
+.login1 button {
+  margin: 0 30% 0 30%;
+  border: none;
+  color: white;
+  background-color: #4489f2;
+  border-radius: 5px;
+  margin-top: 5%;
+  display: flex;
+  align-items: center !important;
+  justify-content: center;
+}
+.esqSenha {
+  margin: 2%;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  .conteudo1{
-    width: 480px;
-    height: 450px;
-  }
-  .conteudo2{
-    width: 480px;
-    height: 480px;
-  }
+.MuiButtonBase-root .MuiTouchRipple-root:hover {
+  background-color: '#fff';
+  color: '#4489f2'
+}
+
+.conteudo1 {
+  margin-right: 50px;
+  width: 400px;
+  height: 350px;
+}
+.conteudo2 {
+  width: 250px;
+  height: 480px;
+}

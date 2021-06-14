@@ -3,7 +3,6 @@
     position: fixed; 
     right: 0;
     top:0;
-    background-color: #FAFAFA;
     height: 105px;
     width: 100%;
     display: flex;
@@ -12,8 +11,8 @@
     padding: 0 25px; 
   }
 .logo{
-    width: 192px;
-    height: 40px;
+    width: 172px;
+    height: 35px;
 }
 nav{
   display: flex;

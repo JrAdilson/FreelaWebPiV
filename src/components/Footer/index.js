@@ -4,10 +4,6 @@ import './style.css';
 function Footer() {
     return (
         <div className="q1-footer">
-            <div className="privacity">
-                <a href=''>Politica de Privacidade</a> 
-            </div>
-
             <div className="copyright">
                 © FREELA. Todos os diretos reservados.
             </div>

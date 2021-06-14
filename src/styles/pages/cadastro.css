@@ -11,16 +11,23 @@
   justify-content: center;
 }
 
+.gifCadastro {
+  width: 500px;
+  margin-right: -550px;
+}
+
 .cadastro1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  box-shadow: -3px -4px 5px rgb(182, 180, 180);
+  box-shadow: -3px -3px 15px rgb(182, 180, 180);
   font-family: poppins!;
-  border: solid 1px;
-  border-color: #4489f2;
   border-radius: 15px;
   padding: 2rem;
+}
+
+form {
+  margin-right: 100px;
 }
 
 form h3 {

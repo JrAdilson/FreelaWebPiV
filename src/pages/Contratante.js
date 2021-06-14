@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Header from '../components/Header/index';
 import '../styles/pages/contratante.css';
-import gandalf from '../assets/img/gandalf.png';
+import gandalf2 from '../assets/img/gandalf2.jpeg';
 import mais from '../assets/img/mais.png';
 import foto from '../assets/img/foto.png';
 import AddVaga from '../components/Modal/AddVaga';
@@ -13,15 +13,13 @@ const PerfilContratante = () => {
     const [isModalCadastroVisible, setIsModalCadastroVisible] = useState(false);
     const [isModalListaVisible, setIsModalListaVisible] = useState(false);
     const [isModalCurtidasVisible, setIsModalCurtidasVisible] = useState(false);
-    const [Cargo, setIsCargo] = useState("Gerente Geral");
-    const [Empresa, setIsEmpresa] = useState("Tech S.A.");
+    const [Cargo, setIsCargo] = useState("Mago");
+    const [Empresa, setIsEmpresa] = useState("Sociedade do Anel™");
     const [Lista, setLista] = useState([]);
-    const [Lista2, setLista2] = useState([]);
     const [vagaAtual, setVagaAtual] = useState([]);
-    const employerid = 4;
+
     useEffect(() => {
         listarDados();
-        listarDados2();
     }, [])
 
     async function listarDados() {
@@ -30,11 +28,6 @@ const PerfilContratante = () => {
         console.log(res.data);
     }
 
-    async function listarDados2() {
-        const res = await api.get(`/employers/${employerid}/jobs/3/matches`);
-        setLista2(res.data);
-        console.log(res.data);
-    }
 
     function handlePressJob(job){
         setVagaAtual(job);
@@ -61,8 +54,8 @@ const PerfilContratante = () => {
                     </div>
                 </div>
                 <div className="profile">
-                    <img alt="profile" src={gandalf} />
-                    <h3>Antônio Carlos</h3>
+                    <img alt="profile" src={gandalf2} />
+                    <h3>Gandalf, o Cinzento</h3>
                     <hr />
                 </div>
                 <p className='desc-emp'>{Cargo} na empresa {Empresa}</p>
@@ -78,7 +71,6 @@ const PerfilContratante = () => {
                     {isModalCurtidasVisible ? (
                         <VagasCurtidas cadastro onClose={() => setIsModalCurtidasVisible(false)}/>
                     ) : null}
-                    <p id='contador2'>{Lista2?.length}</p>
                 </div>
             </div>
         </>

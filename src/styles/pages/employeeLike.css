@@ -1,33 +1,9 @@
-.principal1{
-    display: flex;
-    justify-content: center;
-    padding-top: 120px;
-   
-}
-.secundario{
-    display: flex;
-    flex-direction: column;
-}
-.secundario h3{
-    text-align: center;
-}
 .candidato1{
-    box-shadow: -3px -4px 5px rgb(182, 180, 180);
-    border-radius: 10px;
-    width: 400px;
-    height: 500px;
-    border: solid 2px ;
-    display: flex;
-    justify-content: center;
-   
+    margin-top: 5px;
 }
 .lista-candidato{
-    width: 380px;
-    margin-top: 5px;
+    padding: 10px 20px 10px 20px;
 }
 .p-candidato p{
     color: black;
-}
-li{
-    cursor: pointer;
 }

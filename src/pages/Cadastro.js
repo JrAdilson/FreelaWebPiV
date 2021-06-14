@@ -2,17 +2,25 @@ import React, { useState } from 'react';
 import Header from '../components/Header/index';
 import '../styles/pages/cadastro.css';
 import api from '../services/api';
+import girl from '../assets/img/Girl.gif';
+import TextField from '@material-ui/core/TextField';
+import MenuItem from '@material-ui/core/MenuItem';
+import Select from '@material-ui/core/Select';
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import Collapse from '@material-ui/core/Collapse';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
 
 const Cadastro = () => {
-  const [isContratante, setIsContratante] = useState(false);
-  const [isContratado, setIsContratado] = useState(false);
   const [empregado, setEmpregado] = useState({});
   const [empregador, setEmpregador] = useState({});
   const [usuario, setUsuario] = useState({});
+  const [value, setValue] = useState('');
+  const [stack, setStack] = React.useState('');
 
   const handleCadastro = async (event) => {
     event.preventDefault();
-    if (isContratante) {
+    if (value === 'employer') {
       await api
         .post('/employers', {
           name: usuario.nome,
@@ -25,7 +33,7 @@ const Cadastro = () => {
         .then((result) => console.log(result))
         .catch((err) => console.log(err));
     }
-    if (isContratado) {
+    if (value === 'employee') {
       await api
         .post('/employees', {
           name: usuario.nome,
@@ -40,32 +48,38 @@ const Cadastro = () => {
     }
   };
 
+  const handleChange = (event) => {
+    setValue(event.target.value);
+  };
+
+  const handleStack = (event) => {
+    setStack(event.target.value);
+  }
+
   return (
     <>
-      <Header/>
+      <Header />
       <div className="conteudoCadastro">
         <form className="cadastro1">
           <div className="col-md-12">
-            <h3>Cadastre - se</h3>
-            <hr />
             <label>Nome</label>
-            <input
+            <TextField
               type="text"
               name="nome"
-              placeholder="Junin"
+              placeholder="João da Silva"
               value={usuario.nome}
               onChange={(e) => setUsuario({ ...usuario, nome: e.target.value })}
             />
             <label>Email</label>
-            <input
+            <TextField
               type="email"
               name="email"
-              placeholder="adriano@gmail.com"
+              placeholder="exemplo@email.com"
               value={usuario.email}
               onChange={(e) => setUsuario({ ...usuario, email: e.target.value })}
             />
             <label>Telefone</label>
-            <input
+            <TextField
               type="tel"
               name="telefone"
               placeholder="(xx) x xxxxxxxx"
@@ -74,7 +88,7 @@ const Cadastro = () => {
               onChange={(e) => setUsuario({ ...usuario, telefone: e.target.value })}
             />
             <label>Senha</label>
-            <input
+            <TextField
               type="password"
               name="senha"
               placeholder="********"
@@ -82,72 +96,58 @@ const Cadastro = () => {
               onChange={(e) => setUsuario({ ...usuario, senha: e.target.value })}
             />
             <div className="radio">
-              <div className="radio1">
-                <input
-                  type="radio"
-                  id="cantratante"
-                  name="radiocadastro"
-                  onChange={() => {
-                    setIsContratante(true);
-                    setIsContratado(false);
-                  }}
-                />
-                Contratando
-              </div>
-              <div className="radio2">
-                <input
-                  type="radio"
-                  id="contratado"
-                  name="radiocadastro"
-                  onChange={() => {
-                    setIsContratante(false);
-                    setIsContratado(true);
-                  }}
-                />
-                Buscando Vaga
-              </div>
+              <RadioGroup aria-label="radiocadastro" value={value} name="radiocadastro" onChange={handleChange}>
+                <FormControlLabel value="employer" control={<Radio />} label="Contratando" />
+                <FormControlLabel value="employee" control={<Radio />} label="Buscando Vaga" />
+              </RadioGroup>
             </div>
-            {isContratante && (
+            {value === 'employer' && (
+              <Collapse in={true}>
               <div className="col-md-12" id="empregador">
                 <label>Empresa</label>
-                <input
+                <TextField
                   type="text"
                   name="empresa"
+                  placeholder="Empresa SA"
                   value={empregador.empresa}
                   onChange={(e) =>
                     setEmpregador({ ...empregador, empresa: e.target.value })
                   }
                 />
                 <label>Cargo</label>
-                <input
+                <TextField
                   type="text"
                   name="cargo"
+                  placeholder="Recrutador"
                   value={empregador.cargo}
                   onChange={(e) =>
                     setEmpregador({ ...empregador, cargo: e.target.value })
                   }
                 />
               </div>
+              </Collapse>
             )}
-            {isContratado && (
+            {value === 'employee' && (
+              <Collapse in={value === 'employee'}>
               <div id="empregado">
                 <label>Formação</label>
-                <input
+                <TextField
                   type="text"
                   name="formação"
                   value={empregado.formacao}
+                  placeholder="Análise e Desenvolvimento de Sistemas"
                   onChange={(e) =>
                     setEmpregado({ ...empregado, formacao: e.target.value })
                   }
                 />
-                  <label>Stack</label>
-                  <select className="select-cad" onChange={(e) => setEmpregado({ ...empregado, area: e.target.value })}>
-                    <option value=""></option>
-                    <option value="frontend">Frontend</option>
-                    <option value="backend">Backend</option>
-                    <option value="fullstack">Fullstack</option>
-                  </select>
+                <label>Stack</label>
+                <Select className="select-cad" value={stack} onChange={handleStack}>
+                  <MenuItem value="frontend">Frontend</MenuItem>
+                  <MenuItem value="backend">Backend</MenuItem>
+                  <MenuItem value="fullstack">Fullstack</MenuItem>
+                </Select>
               </div>
+              </Collapse>
             )}
           </div>
           <p>Ao clicar em "Cadastrar" você concorda com os Termos e Condições de uso.</p>
@@ -155,6 +155,7 @@ const Cadastro = () => {
             Cadastrar
           </button>
         </form>
+        <img className='gifCadastro' alt="gif2" src={girl} />
       </div>
     </>
   );
